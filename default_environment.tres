@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://cxavjnlps4h28"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iwv83"]
+use_debanding = false
+
+[sub_resource type="Sky" id="Sky_moamt"]
+sky_material = SubResource("ProceduralSkyMaterial_iwv83")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_moamt")
+ambient_light_source = 3
+reflected_light_source = 2
+tonemap_mode = 2
