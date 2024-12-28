@@ -1,7 +1,5 @@
 # RoyalWedding
-Gravity Controlling Game Concept Built in Godot 4.4
-For now, this README will just be a copy-paste of all the text in the file "notes.nt" (which is where I keep my notes on this project).
----
+_For now, this README will just be a copy-paste of all the text in the file "notes.nt" (which is where I keep my notes on this project)_
 #### [12/20/24]
 I'm starting work on a random Godot game, to avoid burning out on GraphX and just for fun! I'm currently implementing a GenericState and StateMachine in GDScript. All states will derive GenericState, which will have a Tick function that should be called on every physics tick. It also takes an integer argument called "current_tick" but if none is given, it takes Global.current_tick as its value. Global.current_tick is updated every physics tick and will count up to the project tickrate (in my case, 70), then reset to 0.
 
