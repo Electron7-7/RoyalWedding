@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://blre1p7ahayow"]
+[gd_scene load_steps=11 format=3 uid="uid://blre1p7ahayow"]
 
 [ext_resource type="Script" uid="uid://dc7iao8d03il4" path="res://Actors/GodotPlayer/godot_player.gd" id="1_mpvt2"]
 
@@ -28,6 +28,9 @@ size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_khkku"]
 size = Vector3(1, 2, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_khkku"]
+font_size = 32
 
 [node name="GodotPlayer" type="CharacterBody3D"]
 script = ExtResource("1_mpvt2")
@@ -90,3 +93,16 @@ mesh = SubResource("BoxMesh_ncl1t")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 layers = 2
 mesh = SubResource("BoxMesh_khkku")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -358.0
+offset_right = 358.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "Look in any direction and press \"F\" to change gravity!"
+label_settings = SubResource("LabelSettings_khkku")
+horizontal_alignment = 1
+vertical_alignment = 1

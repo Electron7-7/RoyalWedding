@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://0yvh4tldxhhl"]
+
+[ext_resource type="PackedScene" uid="uid://blre1p7ahayow" path="res://Actors/GodotPlayer/GodotPlayer.tscn" id="1_fhw08"]
+[ext_resource type="Material" uid="uid://v6vjty0o2m72" path="res://Source Dev Textures+Materials/SourceEngineDevTexture_Lime.tres" id="2_pb7e7"]
+[ext_resource type="Texture2D" uid="uid://calb0tw2qmu84" path="res://Source Dev Textures+Materials/altdev_generic06.png" id="3_21j4y"]
+[ext_resource type="Texture2D" uid="uid://sspd0dphhg4f" path="res://Source Dev Textures+Materials/altdev_generic05.png" id="4_1i0ar"]
+[ext_resource type="Environment" uid="uid://cxavjnlps4h28" path="res://default_environment.tres" id="5_0w4lk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_miyhp"]
+albedo_texture = ExtResource("3_21j4y")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noewf"]
+albedo_texture = ExtResource("3_21j4y")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyh0g"]
+albedo_texture = ExtResource("4_1i0ar")
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sf7l6"]
+albedo_texture = ExtResource("4_1i0ar")
+uv1_triplanar = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_noewf"]
+
+[node name="GravityTestTheatre" type="Node3D"]
+
+[node name="GodotPlayer" parent="." instance=ExtResource("1_fhw08")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+rotation_edit_mode = 1
+_MOUSE_SENSITIVITY_PRESET = 3
+
+[node name="Room_CSG" type="CSGCombiner3D" parent="."]
+calculate_tangents = false
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Room_CSG"]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 1.7, 22.5, 2.4)
+cone = true
+material = ExtResource("2_pb7e7")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Room_CSG"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 1.5, -2.4)
+material = ExtResource("2_pb7e7")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Room_CSG"]
+transform = Transform3D(-4.37114e-08, -1, 2.98023e-08, 1, -4.37114e-08, 2.98023e-08, -2.98023e-08, 2.98023e-08, 1, 10.5, 13.7, -2.4)
+material = SubResource("StandardMaterial3D_miyhp")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Room_CSG"]
+transform = Transform3D(-4.37114e-08, 1, 0, 1, 4.37114e-08, -2.98023e-08, -2.98023e-08, -1.3027e-15, -1, -10.5, 13.7, 2.4)
+cone = true
+material = SubResource("StandardMaterial3D_noewf")
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="Room_CSG"]
+transform = Transform3D(1.91069e-15, 4.37114e-08, 1, -1, 1.39091e-08, 1.3027e-15, -1.39091e-08, -1, 4.37114e-08, -2.4, 10.3, 10.5)
+cone = true
+material = SubResource("StandardMaterial3D_gyh0g")
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="Room_CSG"]
+transform = Transform3D(1.91069e-15, -4.37114e-08, 1, 1, 7.35137e-08, 1.3027e-15, -7.35137e-08, 1, 4.37114e-08, -2.4, 13.7, -10.5)
+material = SubResource("StandardMaterial3D_sf7l6")
+
+[node name="Box Room" type="CSGCombiner3D" parent="Room_CSG"]
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Room_CSG/Box Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 1.04907e-06)
+flip_faces = true
+size = Vector3(24, 24, 24)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Room_CSG/Box Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 1.04907e-06)
+operation = 2
+size = Vector3(23, 23, 23)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("5_0w4lk")
+camera_attributes = SubResource("CameraAttributesPractical_noewf")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 0)
+light_color = Color(0.561301, 0.676215, 0.797164, 1)
+light_energy = 2.558
+shadow_enabled = true
+omni_range = 20.583
+omni_attenuation = 0.63

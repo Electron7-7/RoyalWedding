@@ -51,7 +51,7 @@ func _process(_delta: float) -> void:
 		facing_direction = "Y_NEG"
 	if(wX >= 45): # Up
 		facing_direction = "Y_POS"
-	$%DebugOut1.text = "Velocity: %5.2v\nGlobal Rotation: %5.2v\nTest Rotation Cap: %s\nFacing Direction: %s" % [velocity, rotation_degrees, wY, facing_direction]
+	$%DebugOut1.text = "Velocity: %5.2v\nGlobal Rotation: %5.2v\nFacing Direction: %s" % [velocity, rotation_degrees, facing_direction]
 
 func _physics_process(_delta: float) -> void:
 	if(quaternion != _wish_rotation):

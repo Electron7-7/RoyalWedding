@@ -9,3 +9,7 @@ func _physics_process(_delta: float) -> void:
 	current_tick += 1
 	if(current_tick > _tick_rate):
 		current_tick = 0
+
+func _unhandled_input(event: InputEvent) -> void:
+	if(event.is_action_pressed("hot_exit")):
+		get_tree().call_deferred("quit")

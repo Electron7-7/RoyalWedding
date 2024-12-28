@@ -31,3 +31,10 @@ Yeah because like, if an enemy wanted to check if the player is moving, for inst
 
 Idea!!:
 	Could I make the gravity changer idea work by changing how I do movement and gravity? Instead of adding separate scalars to separate indices of the velocity vector, what if I multiplied/added scaled versions of changeable "orientation" vectors? I got this idea when I was reminded that Godot has a default "down" vector in the project settings; currently, gravity works by checking if the player is on the ground and lerping velocity[1] towards 0.0. However, if I instead only touched velocity once per tick and had it be affected by a normalized "movement" vector (scaled by speed variables either before or during this process), I could just change the orientation vectors used to create the normalized movement vector! Or something simpler, but still in that same idea.
+
+[12/27/24]
+Big idea!! You should be able to surprise enemies with gravity changes! This means that if enemies are not aware of you (and/or your abilities?) when you change gravity, they should not re-orient themselves (perhaps some enemy types can be more reactive and still re-orient themselves but not as well?). It could also affect enemy accuracy!
+
+On this note: when gravity gets changed, it should affect the project gravity scalar and gravity direction vector in order to affect rigidbody props. This also means that however I decide to affect and calculate movement and gravity in the player and other actors, it should use the project gravity and gravity direction, and also perhaps their own "down" vector in cases where the two will not be the same (i.e: surprised by gravity change).
+
+I want to use billboarded sprites for enemies in my game, like DOOM. This means I also want the sprite to change depending on how the player is viewing the actor. To do this, I'll need to write some code to get the angle the player is viewing the actor at and swap to the corresponding sprite.
