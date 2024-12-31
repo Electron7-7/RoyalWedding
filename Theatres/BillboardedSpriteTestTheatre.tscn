@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7r8lle6381ub"]
+[gd_scene load_steps=4 format=3 uid="uid://b7r8lle6381ub"]
 
-[ext_resource type="Material" uid="uid://v6vjty0o2m72" path="res://Source Dev Textures+Materials/SourceEngineDevTexture_Lime.tres" id="1_dpkag"]
+[ext_resource type="PackedScene" uid="uid://dejsgwym0qekx" path="res://Actors/Enemy/Enemy.tscn" id="1_wmr7y"]
 [ext_resource type="PackedScene" uid="uid://blre1p7ahayow" path="res://Actors/GodotPlayer/GodotPlayer.tscn" id="2_npkal"]
+[ext_resource type="Material" uid="uid://c31r45p6rcyy6" path="res://Resources/Source Dev Textures+Materials/SourceEngineDevTexture_Grey.tres" id="3_wmr7y"]
 
-[node name="BillboardedSpriteTestTheatre" type="Node3D"]
+[node name="Theatre" type="Node3D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_wmr7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="GodotPlayer" parent="." instance=ExtResource("2_npkal")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
 
 [node name="Floor" type="CSGCombiner3D" parent="."]
 use_collision = true
@@ -15,4 +19,4 @@ metadata/_edit_group_ = true
 [node name="CSGBox3D" type="CSGBox3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 size = Vector3(100, 1, 100)
-material = ExtResource("1_dpkag")
+material = ExtResource("3_wmr7y")

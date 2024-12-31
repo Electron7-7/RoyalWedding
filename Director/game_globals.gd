@@ -2,6 +2,7 @@ extends Node
 
 @onready var _tick_rate : int = ProjectSettings.get_setting("physics/common/physics_ticks_per_second")
 @onready var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity") / _tick_rate
+@onready var player: GodotPlayer
 
 var current_tick : int = 0
 

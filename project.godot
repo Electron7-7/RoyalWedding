@@ -12,7 +12,7 @@ config_version=5
 
 config/name="RoyalWedding"
 config/version="0.0.0.1"
-run/main_scene="res://Theatres/GravityTestTheatre.tscn"
+run/main_scene="uid://qn5pc87fcnc7"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -23,9 +23,8 @@ Global="*res://Director/game_globals.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=2
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
@@ -89,19 +88,22 @@ common/physics_interpolation=true
 
 [rendering]
 
-occlusion_culling/bvh_build_quality=1
-textures/canvas_textures/default_texture_filter=3
-global_illumination/gi/use_half_resolution=true
-textures/default_filters/anisotropic_filtering_level=1
-camera/depth_of_field/depth_of_field_bokeh_shape=0
-camera/depth_of_field/depth_of_field_bokeh_quality=0
-environment/ssao/quality=1
-environment/ssil/quality=1
+textures/canvas_textures/default_texture_filter=0
+textures/lossless_compression/force_png=true
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=4
+lights_and_shadows/directional_shadow/16_bits=false
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=4
+global_illumination/voxel_gi/quality=1
+textures/default_filters/anisotropic_filtering_level=3
+camera/depth_of_field/depth_of_field_bokeh_quality=2
+environment/ssao/quality=3
+environment/ssil/quality=3
 anti_aliasing/screen_space_roughness_limiter/enabled=false
-textures/decals/filter=2
-textures/light_projectors/filter=2
-environment/volumetric_fog/use_filter=0
-anti_aliasing/quality/msaa_2d=1
-anti_aliasing/quality/msaa_3d=1
-occlusion_culling/use_occlusion_culling=true
+textures/decals/filter=4
+textures/light_projectors/filter=4
+environment/screen_space_reflection/roughness_quality=2
+environment/subsurface_scattering/subsurface_scattering_quality=2
+anti_aliasing/quality/msaa_2d=2
+anti_aliasing/quality/msaa_3d=2
+lights_and_shadows/positional_shadow/atlas_16_bits=false
 environment/defaults/default_environment="res://default_environment.tres"

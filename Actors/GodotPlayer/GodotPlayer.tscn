@@ -33,7 +33,9 @@ size = Vector3(1, 2, 1)
 font_size = 32
 
 [node name="GodotPlayer" type="CharacterBody3D"]
+rotation_edit_mode = 1
 script = ExtResource("1_mpvt2")
+_MOUSE_SENSITIVITY_PRESET = 7
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
@@ -60,9 +62,23 @@ mesh = SubResource("BoxMesh_7rcxy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 mesh = SubResource("BoxMesh_ncl1t")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("BoxShape3D_icmh5")
-debug_color = Color(0, 0.6, 0.7, 0.42)
+[node name="LookAt" type="Marker3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+
+[node name="DebugFixedAxes" type="Node3D" parent="Head/LookAt"]
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/LookAt/DebugFixedAxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_txnl2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Head/LookAt/DebugFixedAxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+mesh = SubResource("BoxMesh_7rcxy")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Head/LookAt/DebugFixedAxes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+mesh = SubResource("BoxMesh_ncl1t")
 
 [node name="DebugOut1" type="Label" parent="."]
 unique_name_in_owner = true
@@ -90,11 +106,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 visible = false
 mesh = SubResource("BoxMesh_ncl1t")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="BodyCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_icmh5")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+rotation_edit_mode = 1
 layers = 2
 mesh = SubResource("BoxMesh_khkku")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5

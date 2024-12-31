@@ -2,26 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgy7735rnb8fn"
-path="res://.godot/imported/altdev_generic16.png-674d85a77454b0f977b3755697c3a751.ctex"
+uid="uid://dt88a6fkgygab"
+path="res://.godot/imported/TROOA4A6.png-f9ac08339ab648303d01f525371dd325.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Source Dev Textures+Materials/altdev_generic16.png"
-dest_files=["res://.godot/imported/altdev_generic16.png-674d85a77454b0f977b3755697c3a751.ctex"]
+source_file="res://Resources/TestSprites/TROOA4A6.png"
+dest_files=["res://.godot/imported/TROOA4A6.png-f9ac08339ab648303d01f525371dd325.ctex"]
 
 [params]
 
 compress/mode=0
-compress/high_quality=false
-compress/lossy_quality=0.7
+compress/high_quality=true
+compress/lossy_quality=1.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
